@@ -18,7 +18,9 @@ const  HomeTabs =(props)=>{
                     </View>
                 </View>
                 <View style={{flex:1,justifyContent:'center'}}>
+                   {props.secondLine?<Text style={styles.centertab}><Text style={{fontSize:22}}>{props.secondTabCenterTextF} </Text>{props.secondTabCenterTextS}</Text>:null}
                     <Text style={styles.centertab}><Text style={{fontSize:22}}>{props.tabCenterTextF} </Text>{props.tabCenterTextS}</Text>
+                  
                 </View>
                 <View style={{flex:1,justifyContent:'flex-end'}}>
                     <Text style={styles.bottomtab}>{props.tabBottomText}</Text>

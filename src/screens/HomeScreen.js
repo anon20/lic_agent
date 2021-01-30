@@ -65,8 +65,11 @@ const HomeScreen = ({navigation}) => {
                 <HomeTabs 
                     tabTitle="Reminders"
                     tabIcon="bell"
+                    secondLine="true"
                     tabCenterTextF="10" 
                     tabCenterTextS="upcoming"
+                    secondTabCenterTextF="2" 
+                    secondTabCenterTextS="on grace period"
                     tabBgColor={COLORS.HOME_PURPLE}
                     tabBottomText="catch up"
                 
