@@ -8,7 +8,7 @@ const  HomeTabs =(props)=>{
     return (
         
         
-            <TouchableOpacity style={[styles.tabContainer,{backgroundColor:props.tabBgColor}]}>
+            <TouchableOpacity onPress={props.onClick} style={[styles.tabContainer,{backgroundColor:props.tabBgColor}]}>
                 <View style={{flex:1,flexDirection:'row',justifyContent:'space-between'}}>
                     <Text style={styles.tab_title}>{props.tabTitle}</Text>
                     <View style={styles.tabicon_view}>

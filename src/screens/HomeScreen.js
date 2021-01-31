@@ -12,6 +12,9 @@ const SCREEN_WIDTH = Dimensions.get('window').width;
 const HomeScreen = ({navigation}) => {
 
   
+    const handleNavigation = () => {
+        navigation.navigate('Notes')
+    }
 
     return (
         <View style={{ flex: 1,
@@ -105,6 +108,7 @@ const HomeScreen = ({navigation}) => {
                  <HomeTabs 
                     tabTitle="Notes"
                     tabIcon="edit"
+                    onClick={handleNavigation}
                     tabCenterTextF="6" 
                     tabCenterTextS="notes"
                     tabBgColor={COLORS.HOME_DARK_BLUE}

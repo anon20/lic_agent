@@ -6,6 +6,8 @@ import { createStackNavigator,TransitionPreset, TransitionPresets } from '@react
 import HomeScreen from '../screens/HomeScreen.js';
 import SplashScreen from '../screens/SplashScreen.js';
 import LoginScreen from '../screens/LoginScreen.js';
+import Notes from '../screens/NotesScreen.js';
+import CreateNotes from '../screens/NotesCreateScreen.js';
 
 const Stack = createStackNavigator();
 
@@ -22,9 +24,12 @@ const StackNavigation = () =>{
           ...TransitionScreenOptions
         }
         }>
+          
+        <Stack.Screen name="Home" component={HomeScreen}/>
+        <Stack.Screen name="Notes" component={Notes}/>
+        <Stack.Screen name="CreateNotes" component={CreateNotes}/>
         <Stack.Screen name="Splash" component={SplashScreen} />
         <Stack.Screen name="Login" component={LoginScreen} />
-        <Stack.Screen name="Home" component={HomeScreen}/>
       </Stack.Navigator>
   );
 }
