@@ -38,12 +38,14 @@ const styles  = StyleSheet.create({
         alignSelf:'center',
         marginTop:20,
         borderRadius:10,
-        elevation:15
+        elevation:15,
+       
     },
     tab_title:{
         justifyContent:'center',
         paddingLeft:20,
         fontSize:18,
+        fontFamily:'PTSans-Regular',
         color:COLORS.WHITE,
         fontWeight:'bold',
         alignSelf:'center'

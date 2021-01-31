@@ -37,7 +37,7 @@ function NotesCreateScreen({navigation}) {
                 maxLength={300}
                 placeholderTextColor = "black"
                 autoCapitalize = "none"
-                onChangeText = {(e)=>setTitle(e)}/>
+                onChangeText = {(e)=>setText(e)}/>
             </View>
 
             <TouchableHighlight underlayColor='blue' style={{width:SCREEN_WIDTH/2,borderRadius:10,alignSelf:'center',height:SCREEN_HEIGHT/10,backgroundColor:'white',position:'absolute',bottom:45}} onPress={()=>navigation.navigate('CreateNotes')}>
