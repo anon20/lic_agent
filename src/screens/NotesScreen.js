@@ -15,7 +15,7 @@ function NotesScreen({navigation}) {
                 </TouchableOpacity>
                 <Text style={{fontSize:28,fontWeight:'bold',color:'#003C9A',paddingLeft:20}}>Notes</Text>
             </View>
-            <TouchableHighlight underlayColor='blue' style={{width:SCREEN_WIDTH/2,borderRadius:10,alignSelf:'center',height:SCREEN_HEIGHT/10,marginTop:24,backgroundColor:'white'}} onPress={()=>navigation.navigate('CreateNotes')}>
+            <TouchableHighlight underlayColor='blue' style={{width:SCREEN_WIDTH/2,borderRadius:10,alignSelf:'center',height:SCREEN_HEIGHT/14,marginTop:24,backgroundColor:'white'}} onPress={()=>navigation.navigate('CreateNotes')}>
             <View style={styles.addNewNoteBtn}>
                      <MaterialIcon name="plus-circle" color="#707070" size={30}/>
                      <Text style={{fontSize:24,fontWeight:'bold',color:'#003C9A',paddingLeft:10}}>Take a Note</Text>
@@ -63,7 +63,7 @@ const styles = StyleSheet.create ({
         flex:1,
     },
     addNewNoteBtn:{
-    height:SCREEN_HEIGHT/10,shadowColor:'red',elevation:5,
+    height:SCREEN_HEIGHT/14,shadowColor:'red',elevation:5,
     width:SCREEN_WIDTH/2,alignSelf:'center',backgroundColor:'white',
     display:'flex',flexDirection:'row'
     ,alignItems:'center',justifyContent:'center',borderRadius:10},

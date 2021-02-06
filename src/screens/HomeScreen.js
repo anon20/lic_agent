@@ -12,8 +12,17 @@ const SCREEN_WIDTH = Dimensions.get('window').width;
 const HomeScreen = ({navigation}) => {
 
   
-    const handleNavigation = () => {
-        navigation.navigate('Notes')
+    const handleNavigation = (ScreenName) => {
+
+        navigation.navigate(ScreenName)
+        // switch(ScreenName){
+        //     case 'Notes' :
+        //         navigation.navigate('Notes')
+        //     case 'ListClient' :
+        //         navigation.navigate('ListClient')    
+
+        // }
+      
     }
 
     return (
@@ -61,6 +70,7 @@ const HomeScreen = ({navigation}) => {
                     tabIcon="user"
                     tabCenterTextF="200" 
                     tabCenterTextS="people"
+                    onClick={()=>handleNavigation('ListClient')}
                     tabBgColor={COLORS.HOME_LIGHT_RED}
                     tabBottomText="view"
                     
@@ -108,7 +118,7 @@ const HomeScreen = ({navigation}) => {
                  <HomeTabs 
                     tabTitle="Notes"
                     tabIcon="edit"
-                    onClick={handleNavigation}
+                    onClick={()=>handleNavigation('Notes')}
                     tabCenterTextF="6" 
                     tabCenterTextS="notes"
                     tabBgColor={COLORS.HOME_DARK_BLUE}

@@ -9,7 +9,7 @@ const  NotesTabs =(props)=>{
         
         
             <TouchableOpacity onPress={props.onClick} style={[styles.tabContainer,{backgroundColor:props.tabBgColor}]}>
-               
+               <Text style={{textAlign:'center',padding:10,fontSize:16}}>here this is sample code</Text>
             </TouchableOpacity>
         
     )
