@@ -81,6 +81,7 @@ const HomeScreen = ({navigation}) => {
                     secondLine="true"
                     tabCenterTextF="10" 
                     tabCenterTextS="upcoming"
+                    onClick={()=>handleNavigation('Reminder')}
                     secondTabCenterTextF="2" 
                     secondTabCenterTextS="on grace period"
                     tabBgColor={COLORS.HOME_PURPLE}
