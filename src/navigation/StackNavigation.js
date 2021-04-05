@@ -11,6 +11,7 @@ import CreateNotes from '../screens/NotesCreateScreen.js';
 import ListClient from '../screens/ListClientScreen.js';
 import ReminderScreen from '../screens/ReminderScreen.js';
 import AddReminderScreen from '../screens/AddReminderScreen.js';
+import ReminderDescScreen from '../screens/ReminderDescScreen.js'
 const Stack = createStackNavigator();
 
 const TransitionScreenOptions = {
@@ -35,6 +36,8 @@ const StackNavigation = () =>{
         <Stack.Screen name="Login" component={LoginScreen} />
         <Stack.Screen name="Reminder" component={ReminderScreen}/>
         <Stack.Screen name="AddReminder" component={AddReminderScreen}/>
+        <Stack.Screen name="ReminderDesc" component={ReminderDescScreen}/>
+
       </Stack.Navigator>
   );
 }

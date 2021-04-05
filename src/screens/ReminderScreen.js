@@ -77,17 +77,17 @@ const DATA = [
   
 function ReminderScreen({navigation}) {
 
-    const [list,setList] = useState(renderUpcoming)
+    const [list,setList] = useState(DATA)
     const [selectedTab,setSelectedTab] = useState('tabOne')
     
     React.useEffect(() => {
-        setList(renderUpcoming)
+
     }, [])
 
 
     const renderItem =({item}) => (
         <TouchableHighlight underlayColor="lightblue" 
-        onPress={()=>{console.warn(item)}}
+        onPress={()=>navigation.navigate('ReminderDesc')}
         style={{height:SCREEN_HEIGHT/9,width:SCREEN_WIDTH-40,borderRadius:10,
           elevation:5,marginTop:5,marginBottom:5,
         backgroundColor:'white',alignSelf:'center'}}>
@@ -149,18 +149,18 @@ function ReminderScreen({navigation}) {
     const selectTab = (tabName) => {
         switch (tabName) {
             case 'tabOne' : {
-                setList(renderUpcoming)
+                setList(DATA)
                 setSelectedTab('tabOne')
                 break;
             }
             case 'tabTwo' : {
-                setList(renderMissed)
+                setList(DATA2)
                 setSelectedTab('tabTwo')
 
                 break;
             }
             case 'tabThree' : {
-                setList(renderAcknowledged)
+                setList(DATA)
                 setSelectedTab('tabThree')
 
                 break;
@@ -198,7 +198,13 @@ function ReminderScreen({navigation}) {
 
             <View style={{flex:1,marginTop:24,width:SCREEN_WIDTH-20,alignSelf:'center',paddingBottom:20}}>
               
-                {list}
+                 <View style={{flex:1}}>
+                <FlatList
+                        data={list}
+                        renderItem={renderItem}
+                        keyExtractor={item=>item.id}
+                    />
+                </View>
             </View>
 
            
