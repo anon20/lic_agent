@@ -1,7 +1,7 @@
 
 
 import * as React from 'react';
-import { View, Text,StyleSheet,Dimensions,Image,TouchableOpacity } from 'react-native';
+import { View, Text,StyleSheet,Dimensions,Image,TouchableOpacity, SafeAreaView } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import * as Animatable from 'react-native-animatable';
 const SCREEN_HEIGHT = Dimensions.get('window').height;
@@ -10,7 +10,7 @@ const SCREEN_WIDTH = Dimensions.get('window').width;
 
 const SplashScreen = ({navigation}) => {
     return (
-        <View style={{ flex: 1,
+        <SafeAreaView style={{ flex: 1,
           backgroundColor:'#2196f3'}}>
           <View style={styles.upperSection}>
             <Animatable.Image 
@@ -34,7 +34,7 @@ const SplashScreen = ({navigation}) => {
             </Animatable.View>
             </TouchableOpacity>
           </Animatable.View>
-        </View>
+        </SafeAreaView>
       );
 }
 

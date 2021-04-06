@@ -1,5 +1,5 @@
 import React from 'react'
-import {View,StyleSheet,Dimensions, Text,TouchableOpacity,TouchableHighlight,ScrollView,FlatList} from 'react-native';
+import {View,StyleSheet,Dimensions, Text,TouchableOpacity,TouchableHighlight,ScrollView,FlatList,SafeAreaView} from 'react-native';
 import MaterialIcon from 'react-native-vector-icons/FontAwesome';
 import NotesTabs from '../components/NotesTabs.js'
 import { COLORS } from '../assets/Colors/Colors';
@@ -67,7 +67,7 @@ function ListClientScreen({navigation}) {
 
 
     return (
-        <View style={styles.notes_container}>
+        <SafeAreaView style={styles.notes_container}>
             <View style={{height:SCREEN_HEIGHT/10,display:'flex',flexDirection:'row',alignItems:'center'}}>
                 <TouchableOpacity onPress={()=>navigation.goBack()}>
                   <MaterialIcon style={{paddingLeft:20}} name="chevron-left" color="#707070" size={25}/>
@@ -91,7 +91,7 @@ function ListClientScreen({navigation}) {
             </View>
 
            
-        </View>
+        </SafeAreaView>
     )
 }
 

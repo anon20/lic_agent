@@ -13,7 +13,7 @@ const  HomeTabs =(props)=>{
                     <Text style={styles.tab_title}>{props.tabTitle}</Text>
                     <View style={styles.tabicon_view}>
                         
-                        <MaterialIcon style={{alignSelf:'center'}} color="black" name={props.tabIcon} size={22}/>
+                        <MaterialIcon style={{alignSelf:'center'}} color="white" name={props.tabIcon} size={22}/>
                                 
                     </View>
                 </View>
@@ -63,8 +63,8 @@ const styles  = StyleSheet.create({
         marginRight:2,
         alignSelf:'center',
         justifyContent:'center',
-        backgroundColor:'white',
-        opacity:0.5
+        backgroundColor:'#fff4',
+        opacity:1
     },
     bottomtab :{
     justifyContent:'center',

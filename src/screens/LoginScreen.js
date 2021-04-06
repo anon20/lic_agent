@@ -1,5 +1,5 @@
 import React,{useState} from 'react';
-import { View,TextInput, Text,StyleSheet,Dimensions,Image,TouchableOpacity } from 'react-native';
+import { View,TextInput, Text,StyleSheet,Dimensions,Image,TouchableOpacity, SafeAreaView } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import MaterialIcon from 'react-native-vector-icons/MaterialCommunityIcons';
 
@@ -14,12 +14,13 @@ const LoginScreen = ({navigation}) => {
   const [email, setEmail] = React.useState('');
   const [password, setPassword] = React.useState('');
 
+    
   const loginHandler = () => {
     navigation.navigate('Home')
   }
 
     return (
-        <View style={{ flex: 1,
+        <SafeAreaView style={{ flex: 1,
           backgroundColor:'#2196f3'}}>
           <View style={styles.upperSection}>
             <View style={{width:'90%',alignSelf:'center',flexDirection:'row',justifyContent:'space-around'}}>
@@ -100,7 +101,7 @@ const LoginScreen = ({navigation}) => {
 
             </View>
           </Animatable.View>
-        </View>
+        </SafeAreaView>
       );
 }
 

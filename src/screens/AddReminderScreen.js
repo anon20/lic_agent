@@ -1,5 +1,5 @@
 import React,{useState,useEffect} from 'react'
-import {View,StyleSheet,Dimensions, Text,TouchableOpacity,TextInput} from 'react-native';
+import {View,StyleSheet,Dimensions, Text,TouchableOpacity,TextInput,SafeAreaView} from 'react-native';
 import MaterialIcon from 'react-native-vector-icons/FontAwesome';
 import DateTimePicker from '@react-native-community/datetimepicker';
 
@@ -34,7 +34,7 @@ function AddReminderScreen({navigation}) {
       showMode('time');
     };
     return (
-        <View style={styles.container}>
+        <SafeAreaView style={styles.container}>
               <View style={{height:SCREEN_HEIGHT/10,display:'flex',flexDirection:'row',alignItems:'center'}}>
                 <TouchableOpacity onPress={()=>navigation.goBack()}>
                   <MaterialIcon style={{paddingLeft:20}} name="chevron-left" color="#707070" size={25}/>
@@ -109,7 +109,7 @@ function AddReminderScreen({navigation}) {
             </View>
             </TouchableOpacity>
            
-        </View>
+        </SafeAreaView>
     )
 }
 

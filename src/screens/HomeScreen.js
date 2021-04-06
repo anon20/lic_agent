@@ -1,5 +1,5 @@
 import React,{useState} from 'react';
-import { View,TextInput, Text,StyleSheet,Dimensions,Image,TouchableOpacity,ScrollView } from 'react-native';
+import { View,TextInput, Text,StyleSheet,Dimensions,Image,TouchableOpacity,ScrollView,SafeAreaView } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import MaterialIcon from 'react-native-vector-icons/MaterialCommunityIcons';
 import HomeTabs from '../components/HomeTabs';
@@ -26,7 +26,7 @@ const HomeScreen = ({navigation}) => {
     }
 
     return (
-        <View style={{ flex: 1,
+        <SafeAreaView style={{ flex: 1,
           backgroundColor:'white'}}>
             <View style={styles.username_container}>
                 <Text style={{fontSize:22,fontWeight:'700',alignSelf:'center',paddingLeft:20,color:'#003C9A'}}>
@@ -147,7 +147,7 @@ const HomeScreen = ({navigation}) => {
                 
                </View> 
             </ScrollView>
-        </View>
+        </SafeAreaView>
       );
 }
 

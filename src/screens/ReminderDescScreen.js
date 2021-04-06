@@ -1,11 +1,11 @@
 import React from 'react'
-import {View,StyleSheet,Dimensions, Text,TouchableOpacity,TouchableHighlight,ScrollView,FlatList} from 'react-native';
+import {View,StyleSheet,Dimensions, Text,TouchableOpacity,TouchableHighlight,ScrollView,FlatList, SafeAreaView} from 'react-native';
 import MaterialIcon from 'react-native-vector-icons/FontAwesome';
 const SCREEN_HEIGHT = Dimensions.get('window').height;
 const SCREEN_WIDTH = Dimensions.get('window').width;
 function ReminderDescScreen() {
     return (
-        <View style={{flex:1}}>
+        <SafeAreaView style={{flex:1}}>
             <View style={{height:SCREEN_HEIGHT/10,display:'flex',flexDirection:'row',alignItems:'center'}}>
                 <TouchableOpacity onPress={()=>navigation.goBack()}>
                   <MaterialIcon style={{paddingLeft:20}} name="chevron-left" color="#707070" size={25}/>
@@ -53,7 +53,7 @@ function ReminderDescScreen() {
             </View>
 
             
-        </View>
+        </SafeAreaView>
     )
 }
 
