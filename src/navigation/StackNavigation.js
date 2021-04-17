@@ -12,6 +12,14 @@ import ListClient from '../screens/ListClientScreen.js';
 import ReminderScreen from '../screens/ReminderScreen.js';
 import AddReminderScreen from '../screens/AddReminderScreen.js';
 import ReminderDescScreen from '../screens/ReminderDescScreen.js'
+import AddClientScreenOne from '../screens/addClient/AddClientScreenOne.js';
+import AddClientScreenTwo from '../screens/addClient/AddClientScreenTwo.js';
+import AddClientScreenThree from '../screens/addClient/AddClientScreenThree.js';
+import DocumentScreen from '../screens/DocumentScreen.js';
+import GreetingScreen from '../screens/GreetingScreen.js';
+import CalculatorScreen from '../screens/CalculatorScreen.js';
+import GrowthScreen from '../screens/GrowthScreen.js';
+import ClientDescScreen from '../screens/ClientDescScreen.js';
 const Stack = createStackNavigator();
 
 const TransitionScreenOptions = {
@@ -37,6 +45,15 @@ const StackNavigation = () =>{
         <Stack.Screen name="Reminder" component={ReminderScreen}/>
         <Stack.Screen name="AddReminder" component={AddReminderScreen}/>
         <Stack.Screen name="ReminderDesc" component={ReminderDescScreen}/>
+        <Stack.Screen name="AddClientOne" component={AddClientScreenOne}/>
+        <Stack.Screen name="AddClientTwo" component={AddClientScreenTwo}/>
+        <Stack.Screen name="AddClientThree" component={AddClientScreenThree}/>
+        <Stack.Screen name="Document" component={DocumentScreen}/>
+        <Stack.Screen name="Greeting" component={GreetingScreen}/>
+        <Stack.Screen name="Calculator" component={CalculatorScreen}/>
+        <Stack.Screen name="Growth" component={GrowthScreen}/>
+        <Stack.Screen name="ClientDesc" component={ClientDescScreen}/>
+
 
       </Stack.Navigator>
   );

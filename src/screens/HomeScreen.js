@@ -93,6 +93,7 @@ const HomeScreen = ({navigation}) => {
                     tabIcon="gift"
                     tabCenterTextF="2" 
                     tabCenterTextS="upcoming"
+                    onClick={()=>handleNavigation('Greeting')}
                     tabBgColor={COLORS.HOME_LIGHT_BLUE}
                     tabBottomText="anniversaries"
                     
@@ -102,6 +103,7 @@ const HomeScreen = ({navigation}) => {
                     tabIcon="list"
                     tabCenterTextF="10" 
                     tabCenterTextS="documents"
+                    onClick={()=>handleNavigation('Document')}
                     tabBgColor={COLORS.HOME_LIGHT_ORANGE}
                     tabBottomText="download"
                     
@@ -112,6 +114,7 @@ const HomeScreen = ({navigation}) => {
                     tabIcon="male"
                     tabCenterTextF="15" 
                     tabCenterTextS="documents"
+                    onClick={()=>handleNavigation('Reminder')}
                     tabBgColor={COLORS.HOME_LIGHT_GREEN}
                     tabBottomText="information"
                     
@@ -131,6 +134,7 @@ const HomeScreen = ({navigation}) => {
                     tabIcon="signal"
                     tabCenterTextF="5 %" 
                     tabCenterTextS="this month"
+                    onClick={()=>handleNavigation('Growth')}
                     tabBgColor={COLORS.HOME_DARK_ORANGE}
                     tabBottomText="my growth"
                     
@@ -139,6 +143,7 @@ const HomeScreen = ({navigation}) => {
                     tabTitle="Calculator"
                     tabIcon="calculator"
                     tabCenterTextF="210" 
+                    onClick={()=>handleNavigation('Calculator')}
                     tabCenterTextS="premium"
                     tabBgColor={COLORS.HOME_DARK_RED}
                     tabBottomText="calculate"
