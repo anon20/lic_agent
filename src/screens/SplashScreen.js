@@ -11,7 +11,7 @@ const SCREEN_WIDTH = Dimensions.get('window').width;
 const SplashScreen = ({navigation}) => {
     return (
         <SafeAreaView style={{ flex: 1,
-          backgroundColor:'#2196f3'}}>
+          backgroundColor:'#EFB14E'}}>
           <View style={styles.upperSection}>
             <Animatable.Image 
               animation="bounceIn"
@@ -58,7 +58,7 @@ const styles = StyleSheet.create({
     // fontFamily:'AndikaNewBasic-Bold'
   },
   btn: {
-    backgroundColor:'#2196f3',
+    backgroundColor:'#EFB14E',
     height:50,
     width:150,
     justifyContent:'center',
