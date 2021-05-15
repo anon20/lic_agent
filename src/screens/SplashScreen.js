@@ -25,7 +25,7 @@ const SplashScreen = ({navigation}) => {
             <View style={{width:'80%',alignSelf:'center',marginTop:15,flex:0.7}}>
               <Text style={styles.intro}>Stay connected with your Clients !</Text>
             </View> 
-            <TouchableOpacity onPress={()=>navigation.navigate('Login')} style={styles.btnView} >
+            <TouchableOpacity onPress={()=>navigation.navigate('SetLanguage')} style={styles.btnView} >
             <Animatable.View
               animation="fadeInRight"  
              style={styles.btn}>

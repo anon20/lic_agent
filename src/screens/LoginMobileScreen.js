@@ -9,9 +9,9 @@ const SCREEN_HEIGHT = Dimensions.get('window').height;
 const SCREEN_WIDTH = Dimensions.get('window').width;
 
 
-const LoginScreen = ({navigation}) => {
+const LoginMobileScreen = ({navigation}) => {
 
-  const [email, setEmail] = React.useState('');
+  const [phone, setPhone] = React.useState('');
   const [password, setPassword] = React.useState('');
 
     
@@ -37,14 +37,14 @@ const LoginScreen = ({navigation}) => {
                <View style={[{flexDirection:'row'},styles.textbox]}>
                  <View style={{flex:0.1,justifyContent:'center',paddingLeft:10}}>
                    {/* <MaterialIcon style={{alignSelf:'center'}} name="{"email" size={20}/> */}
-                   <Image style={{alignSelf:'center',height:20,width:20}} height={20} width={20} source={require('../assets/images/email.png')} />
+                   <Image style={{alignSelf:'center',height:20,width:20}} height={20} width={20} source={require('../assets/images/phone-call.png')} />
                  </View>
                 <View  style={{flex:1}}>
                   <TextInput
                     style={styles.email}
-                    onChangeText={text => setEmail(text)}
-                    value={email}
-                    placeholder="enter email"
+                    onChangeText={text => setPhone(text)}
+                    value={phone}
+                    placeholder="Phone Number"
                   />
                 </View>
               
@@ -68,7 +68,7 @@ const LoginScreen = ({navigation}) => {
             </View>
               <TouchableOpacity
                 onPress={() => {
-                  navigation.navigate('LoginMobile')
+                  navigation.navigate('OTP')
                 }}
                 style={styles.loginBtn}>
                 <Text style={styles.loginBtnText}>Continue</Text>
@@ -99,11 +99,10 @@ const styles = StyleSheet.create({
   upperSection:{
     height:100,
     width:100,
-    borderBottomEndRadius:1000,
+    borderBottomEndRadius:100,
     justifyContent:'center',
     backgroundColor:'#EFB14E',
     elevation:5,
-    
     
   },
   upperSectionRight:{
@@ -172,4 +171,4 @@ const styles = StyleSheet.create({
 
 
 
-export default LoginScreen;
+export default LoginMobileScreen;
