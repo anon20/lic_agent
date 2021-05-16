@@ -11,7 +11,7 @@ const SCREEN_WIDTH = Dimensions.get('window').width;
 const SplashScreen = ({navigation}) => {
     return (
         <SafeAreaView style={{ flex: 1,
-          backgroundColor:'#2196f3'}}>
+          backgroundColor:'#EFB14E'}}>
           <View style={styles.upperSection}>
             <Animatable.Image 
               animation="bounceIn"
@@ -25,7 +25,7 @@ const SplashScreen = ({navigation}) => {
             <View style={{width:'80%',alignSelf:'center',marginTop:15,flex:0.7}}>
               <Text style={styles.intro}>Stay connected with your Clients !</Text>
             </View> 
-            <TouchableOpacity onPress={()=>navigation.navigate('Login')} style={styles.btnView} >
+            <TouchableOpacity onPress={()=>navigation.navigate('SetLanguage')} style={styles.btnView} >
             <Animatable.View
               animation="fadeInRight"  
              style={styles.btn}>
@@ -58,7 +58,7 @@ const styles = StyleSheet.create({
     // fontFamily:'AndikaNewBasic-Bold'
   },
   btn: {
-    backgroundColor:'#2196f3',
+    backgroundColor:'#EFB14E',
     height:50,
     width:150,
     justifyContent:'center',

@@ -6,7 +6,7 @@ import InputView from '../components/InputView.js';
 export default props => {
 	return (
 		<View style={{flex:1, alignItems:'center'}}>
-			<TouchableOpacity style={[styles.btnStyle]}>
+			<TouchableOpacity onPress={() => {props.callbackFunc();}} style={[styles.btnStyle, {backgroundColor:props.theme}]}>
 				<Text style={[styles.btnTextStyle]}>{props.submitText}</Text>
 			</TouchableOpacity>
 			
@@ -16,10 +16,10 @@ export default props => {
 
 const styles = StyleSheet.create({
 	btnStyle:{
-		backgroundColor:'#EFB14E',
+		
 		borderRadius:100,
 		alignItems:'center',
-		width:'40%',
+		width:'100%',
 	},
 	btnTextStyle:{
 		padding:15,

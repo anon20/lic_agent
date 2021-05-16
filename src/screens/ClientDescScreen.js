@@ -11,69 +11,27 @@ const SCREEN_WIDTH = Dimensions.get('window').width;
 
 const DATA = [
     {
-      id: 'bd7acbea-c1b1-46c2-aed5-3ad53abb28ba',
-      name: 'First Item',
-      policy:56,
-      policyNum:56486556
-    },
-    {
-      id: 'bd7acbea-c1b1-46c2-aed5-',
-      name: 'First Item',
-      policy:56,
-      policyNum:56486556
-    },
-    {
-        id: 'bd7acbea-c1b1-46c2-aed5-ad',
-        name: 'First Item',
-        policy:56,
-        policyNum:56486556
-    }, 
-    {
-        id: 'bd7acbea-c1b1-46c2-aed5-3adqw53abb28ba',
-        name: 'First Item',
-        policy:56,
-        policyNum:56486556
-      },
-      {
-        id: 'bd7acbea-c1b1-46c2-aed5-3ad5dd3abb28ba',
-        name: 'First Item',
-        policy:56,
-        policyNum:56486556
-      },   
+     personalInfo :{
+        'Name':'yash Bhayre',
+      'Phone Number':'79878789',
+      'Address':'qweasd asdqwea asdasd',
+      'Date of Birth': '22th January 2020',
+      'Height':'172cm',
+      'Weight':'72kg',
+        'Occupation':'Employee'
+     },
+     policyInfo :{
+        'Name':'yash Bhayre',
+        'Phone Number':'79878789',
+        'Address':'qweasd asdqwea asdasd',
+        'Date of Birth': '22th January 2020',
+        'Height':'172cm',
+        'Weight':'72kg',
+          'Occupation':'Employee'
+     }   
+    }
   ];
-  const DATA2 = [
-    {
-      id: 'bd7acbea-c1b1-46c2-aed5-3ad53abb28ba',
-      name: 'Missed Item',
-      policy:56,
-      policyNum:56486556
-    },
-    {
-      id: 'bd7acbea-c1b1-46c2-aed5-',
-      name: 'SEcond Missed',
-      policy:56,
-      policyNum:56486556
-    },
-    {
-        id: 'bd7acbea-c1b1-46c2-aed5-ad',
-        name: 'First Item',
-        policy:56,
-        policyNum:56486556
-    }, 
-    {
-        id: 'bd7acbea-c1b1-46c2-aed5-3adqw53abb28ba',
-        name: 'First Item',
-        policy:56,
-        policyNum:56486556
-      },
-      {
-        id: 'bd7acbea-c1b1-46c2-aed5-3ad5dd3abb28ba',
-        name: 'First Item',
-        policy:56,
-        policyNum:56486556
-      },   
-  ];  
-
+ 
   
 function ClientDescScreen({navigation}) {
 
@@ -136,6 +94,12 @@ function ClientDescScreen({navigation}) {
                 </TouchableOpacity>
                 <Text style={{fontSize:28,fontWeight:'bold',color:'#003C9A',paddingLeft:20}}>Clients</Text>
             </View>
+            <TouchableHighlight underlayColor='blue' style={styles.addNewBtnContainer} onPress={()=>navigation.navigate('AddClientOne')}>
+            <View style={styles.addNewClientBtn}>
+                     <MaterialIcon name="plus-circle" color="#707070" size={30}/>
+                     <Text style={{fontSize:24,fontWeight:'bold',color:'#003C9A',paddingLeft:10}}>Add Client</Text>
+            </View>
+            </TouchableHighlight>
            
             <View style={{display:'flex',flexDirection:'row',justifyContent:'space-evenly',height:SCREEN_HEIGHT/10,alignItems:'center',marginTop:20,backgroundColor:'white',width:SCREEN_WIDTH-20,borderRadius:10,alignSelf:'center',elevation:5,shadowColor:'yellow',borderColor:'yellow',borderWidth:1}}>
                     <TouchableHighlight underlayColor='lightgreen' style={{padding:10}} onPress={()=>selectTab('tabOne')}>
@@ -152,8 +116,30 @@ function ClientDescScreen({navigation}) {
 
             <View style={{flex:1,marginTop:24,width:SCREEN_WIDTH-20,alignSelf:'center',paddingBottom:20}}>
               
-                 <ScrollView style={{flex:1,backgroundColor:'red'}}>
-                    
+                 <ScrollView style={{flex:1,width:'80%',alignSelf:'center'}}>
+
+                    {DATA.map(item => {
+                        let objKeys = Object.keys(item.per);
+
+                        console.log(objKeys)
+                        objKeys.forEach(key => {
+                            // console.log(key,item.personalInfo[key])
+                            return (
+                                <View style={{display:'flex',flexDirection:'row',justifyContent:"space-between"}}>
+                                    {/* <Text style={{fontSize:16,paddingLeft:5}}>{key}</Text> */}
+                                    {/* <Text style={{fontSize:16,paddingRight:5}}>{item.personalInfo[key]}</Text> */}
+                                </View>
+                            )
+                          
+                        })
+                    })}
+
+                    {/* <View style={{display:'flex',flexDirection:'row',justifyContent:"space-between"}}>
+                        <Text style={{fontSize:16,paddingLeft:5}}>Name</Text>
+                        <Text style={{fontSize:16,paddingRight:5}}>Yash Bhayre</Text>
+                    </View> */}
+                    <View style={{height:1,backgroundColor:'black',marginTop:5}}>
+                     </View>
                 </ScrollView>
             </View>
 
@@ -167,19 +153,21 @@ const styles = StyleSheet.create ({
         flex:1,
     },
     addNewBtnContainer:{
-        width:SCREEN_WIDTH/1.5,
+        width:SCREEN_WIDTH/2.5,
         borderRadius:10,
-        alignSelf:'center',
+        alignSelf:'flex-end',
         height:SCREEN_HEIGHT/14,
         marginTop:24,
-        backgroundColor:'white',
+        backgroundColor:'red',
+        marginRight:15
     },
+
     addNewClientBtn:{
         height:SCREEN_HEIGHT/14,
         shadowColor:'red',
         elevation:5,
-        width:SCREEN_WIDTH/1.5,
-        alignSelf:'center',
+        width:SCREEN_WIDTH/2.5,
+        alignSelf:'flex-end',
         backgroundColor:'white',
         display:'flex',
         flexDirection:'row'
@@ -187,6 +175,7 @@ const styles = StyleSheet.create ({
         justifyContent:'center',
         borderRadius:10},
         
+       
 })
 
 export default ClientDescScreen

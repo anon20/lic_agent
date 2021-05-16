@@ -7,11 +7,12 @@ import * as Animatable from 'react-native-animatable';
 import { RotationGestureHandler } from 'react-native-gesture-handler';
 const SCREEN_HEIGHT = Dimensions.get('window').height;
 const SCREEN_WIDTH = Dimensions.get('window').width;
+import PasswordImg from '../assets/images/password.png';
 
 
-const LoginScreen = ({navigation}) => {
+const OTPScreen = ({navigation}) => {
 
-  const [email, setEmail] = React.useState('');
+  const [otp, setOtp] = React.useState('');
   const [password, setPassword] = React.useState('');
 
     
@@ -21,7 +22,7 @@ const LoginScreen = ({navigation}) => {
 
     return (
         <SafeAreaView style={{ flex: 1,backgroundColor:"white"}}>
-           <Animatable.View 
+         <Animatable.View 
             animation="fadeInDown"
              style={styles.upperSection}>
           
@@ -31,57 +32,19 @@ const LoginScreen = ({navigation}) => {
             style={styles.lowerSection}>
             <View style={{width:'90%',alignSelf:'center'}}>
               <View>
-                <Text style={{fontSize:32,fontWeight:'500'}}>Login</Text>
-                <Text style={{fontSize:16,fontWeight:'500',color:'black',opacity:0.5,marginTop:5}}>Sign in to continue</Text>
+                <Text style={{fontSize:32,fontWeight:'500'}}>OTP</Text>
+                <Text style={{fontSize:16,fontWeight:'500',color:'black',opacity:0.5,marginTop:5}}>
+                Enter One Time Passcode received on your phone
+                </Text>
               </View>
-               <View style={[{flexDirection:'row'},styles.textbox]}>
-                 <View style={{flex:0.1,justifyContent:'center',paddingLeft:10}}>
-                   {/* <MaterialIcon style={{alignSelf:'center'}} name="{"email" size={20}/> */}
-                   <Image style={{alignSelf:'center',height:20,width:20}} height={20} width={20} source={require('../assets/images/email.png')} />
-                 </View>
-                <View  style={{flex:1}}>
-                  <TextInput
-                    style={styles.email}
-                    onChangeText={text => setEmail(text)}
-                    value={email}
-                    placeholder="enter email"
-                  />
-                </View>
+		<InputView img={PasswordImg} textType={"Enter OTP"}/>	
               
-              </View>
-                {/* <View style={[{flexDirection:'row',marginTop:10},styles.textbox]}>
-                  <View style={{flex:0.1,justifyContent:'center'}}>
-                   <Icon style={{alignSelf:'center'}} name="lock" size={20}/>
-                 </View>
-                 <View  style={{flex:1}}>
-                    <TextInput
-                      secureTextEntry={true}
-                      textContentType="password"
-                        style={styles.password}
-                        onChangeText={text => setPassword(text)}
-                        value={password}
-                        placeholder="enter password"
-                      />
-                 </View>
-                
-                </View>  */}
             </View>
               <TouchableOpacity
-                onPress={() => {
-                  navigation.navigate('LoginMobile')
-                }}
+                onPress={()=>navigation.navigate('SignUp')}
                 style={styles.loginBtn}>
                 <Text style={styles.loginBtnText}>Continue</Text>
               </TouchableOpacity>
-
-              
-              <View style={{display:'flex',alignItems:'center',marginTop:24}}>
-                <Text style={{fontWeight:'700',fontSize:24}}>or</Text>
-              </View>
-              <TouchableOpacity style={{display:'flex',alignItems:'center',marginTop:24}}>
-                 <Image style={{alignSelf:'center',height:45,width:45}} height={45} width={45} source={require('../assets/images/google.png')} />
-              </TouchableOpacity>
-
 
               </View>
               <Animatable.View 
@@ -99,11 +62,10 @@ const styles = StyleSheet.create({
   upperSection:{
     height:100,
     width:100,
-    borderBottomEndRadius:1000,
+    borderBottomEndRadius:100,
     justifyContent:'center',
     backgroundColor:'#EFB14E',
     elevation:5,
-    
     
   },
   upperSectionRight:{
@@ -172,4 +134,4 @@ const styles = StyleSheet.create({
 
 
 
-export default LoginScreen;
+export default OTPScreen;

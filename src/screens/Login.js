@@ -27,7 +27,7 @@ export default props => {
 					<InputView img={Email} textType={"Email"}/>	
 				</View>
 				<View style={[{flex:0.15}]}>
-					<SubmitBtn submitText={"Continue"} />
+					<SubmitBtn submitText={"Continue"} theme={"#EFB14E"} />
 				</View>
 				<View style={[{flex:0.2, alignItems:'center'}]}>
 					<Text style={[styles.titleText, styles.customFont]}>or</Text>
