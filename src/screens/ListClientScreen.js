@@ -1,8 +1,8 @@
 import React from 'react'
 import {View,StyleSheet,Dimensions, Text,TouchableOpacity,TouchableHighlight,ScrollView,FlatList,SafeAreaView} from 'react-native';
 import MaterialIcon from 'react-native-vector-icons/FontAwesome';
-import NotesTabs from '../components/NotesTabs.js'
-import { COLORS } from '../assets/Colors/Colors';
+import NotesTabs from 'components/NotesTabs.js'
+import { COLORS } from 'assets/Colors/Colors';
 const SCREEN_HEIGHT = Dimensions.get('window').height;
 const SCREEN_WIDTH = Dimensions.get('window').width;
 

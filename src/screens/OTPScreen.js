@@ -2,12 +2,12 @@ import React,{useState} from 'react';
 import { View,TextInput, Text,StyleSheet,Dimensions,Image,TouchableOpacity, SafeAreaView } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import MaterialIcon from 'react-native-vector-icons/MaterialCommunityIcons';
-import emailIcon from '../assets/images/email.png';
+import emailIcon from 'assets/images/email.png';
 import * as Animatable from 'react-native-animatable';
 import { RotationGestureHandler } from 'react-native-gesture-handler';
 const SCREEN_HEIGHT = Dimensions.get('window').height;
 const SCREEN_WIDTH = Dimensions.get('window').width;
-import PasswordImg from '../assets/images/password.png';
+import PasswordImg from 'assets/images/password.png';
 
 
 const OTPScreen = ({navigation}) => {

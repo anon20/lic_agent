@@ -2,7 +2,7 @@ import React,{useState} from 'react';
 import { View,TextInput, Text,StyleSheet,Dimensions,Image,TouchableOpacity, SafeAreaView } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import MaterialIcon from 'react-native-vector-icons/MaterialCommunityIcons';
-import emailIcon from '../assets/images/email.png';
+import emailIcon from 'assets/images/email.png';
 import * as Animatable from 'react-native-animatable';
 import { RotationGestureHandler } from 'react-native-gesture-handler';
 const SCREEN_HEIGHT = Dimensions.get('window').height;
@@ -37,7 +37,7 @@ const LoginScreen = ({navigation}) => {
                <View style={[{flexDirection:'row'},styles.textbox]}>
                  <View style={{flex:0.1,justifyContent:'center',paddingLeft:10}}>
                    {/* <MaterialIcon style={{alignSelf:'center'}} name="{"email" size={20}/> */}
-                   <Image style={{alignSelf:'center',height:20,width:20}} height={20} width={20} source={require('../assets/images/email.png')} />
+                   <Image style={{alignSelf:'center',height:20,width:20}} height={20} width={20} source={require('assets/images/email.png')} />
                  </View>
                 <View  style={{flex:1}}>
                   <TextInput
@@ -79,7 +79,7 @@ const LoginScreen = ({navigation}) => {
                 <Text style={{fontWeight:'700',fontSize:24}}>or</Text>
               </View>
               <TouchableOpacity style={{display:'flex',alignItems:'center',marginTop:24}}>
-                 <Image style={{alignSelf:'center',height:45,width:45}} height={45} width={45} source={require('../assets/images/google.png')} />
+                 <Image style={{alignSelf:'center',height:45,width:45}} height={45} width={45} source={require('assets/images/google.png')} />
               </TouchableOpacity>
 
 

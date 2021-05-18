@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import SubmitBtn from '../components/SubmitBtn';
-import {SubTitle, MainTitle} from '../components/AuthTitles.js';
+import SubmitBtn from 'components/SubmitBtn';
+import {SubTitle, MainTitle} from 'components/AuthTitles.js';
 import {
   View,
   TextInput,
@@ -13,10 +13,10 @@ import {
 } from "react-native";
 import Icon from "react-native-vector-icons/FontAwesome";
 import MaterialIcon from "react-native-vector-icons/MaterialCommunityIcons";
-import emailIcon from "../assets/images/email.png";
+import emailIcon from "assets/images/email.png";
 import * as Animatable from "react-native-animatable";
 import { RotationGestureHandler } from "react-native-gesture-handler";
-import {SideViews2} from '../components/SideViews.js';
+import {SideViews2} from 'components/SideViews.js';
 const SCREEN_HEIGHT = Dimensions.get("window").height;
 const SCREEN_WIDTH = Dimensions.get("window").width;
 
@@ -37,7 +37,7 @@ const SetupBioScreen = ({ navigation }) => {
           </View>
          
          <View style={{marginTop:40,marginBottom:40}}>
-           <Image style={{height:125,width:125,alignSelf:'center'}} source={require('../assets/images/fingerprint.png')} />
+           <Image style={{height:125,width:125,alignSelf:'center'}} source={require('assets/images/fingerprint.png')} />
          </View>
          
         </View>

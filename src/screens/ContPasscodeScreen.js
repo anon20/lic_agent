@@ -11,7 +11,7 @@ import {
 } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import MaterialIcon from 'react-native-vector-icons/MaterialCommunityIcons';
-import emailIcon from '../assets/images/email.png';
+import emailIcon from 'assets/images/email.png';
 import * as Animatable from 'react-native-animatable';
 import {RotationGestureHandler} from 'react-native-gesture-handler';
 const SCREEN_HEIGHT = Dimensions.get('window').height;
@@ -60,7 +60,7 @@ const ContPasscodeScreen = ({navigation}) => {
                 style={{ alignSelf: "center", height: 20, width: 20 }}
                 height={20}
                 width={20}
-                source={require("../assets/images/password.png")}
+                source={require("assets/images/password.png")}
               />
             </View>
             <View style={{ flex: 1 }}>

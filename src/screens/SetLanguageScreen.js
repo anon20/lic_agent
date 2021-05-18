@@ -11,8 +11,10 @@ import {
   ScrollView
 } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
+import {SubTitle, MainTitle} from 'components/AuthTitles.js';
+import SubmitBtn from 'components/SubmitBtn.js';
 import MaterialIcon from 'react-native-vector-icons/MaterialCommunityIcons';
-import emailIcon from '../assets/images/email.png';
+import emailIcon from 'assets/images/email.png';
 import * as Animatable from 'react-native-animatable';
 import {RotationGestureHandler} from 'react-native-gesture-handler';
 const SCREEN_HEIGHT = Dimensions.get('window').height;
@@ -43,19 +45,8 @@ const SetLanguageScreen = ({navigation}) => {
       <View style={styles.lowerSection}>
         <View style={{width: '90%', alignSelf: 'center'}}>
           <View>
-            <Text style={{fontSize: 32, fontWeight: '500'}}>
-              Choose Your Language
-            </Text>
-            <Text
-              style={{
-                fontSize: 16,
-                fontWeight: '500',
-                color: 'black',
-                opacity: 0.5,
-                marginTop: 5,
-              }}>
-              Select the Language in which you want to use the application
-            </Text>
+	    <MainTitle titleText={"Choose Your Language"} />
+	    <SubTitle titleText={"Select the Language in which you want to use the App"} />
           </View>
         </View>
         <ScrollView
@@ -67,7 +58,7 @@ const SetLanguageScreen = ({navigation}) => {
                   <TouchableOpacity key={key} style={styles.languages} onPress={()=>setSelectedLang(key)}>
                   <View style={{height:'100%',width:'90%',alignSelf:'center'}}>
                       <View style={{marginTop:5,height:25}}>
-                      {selectedLang==key?  <Image style={{height:25,width:25,alignSelf:'flex-end'}} source={require('../assets/images/check-mark.png')} /> : <></>}
+                      {selectedLang==key?  <Image style={{height:25,width:25,alignSelf:'flex-end'}} source={require('assets/images/check-mark.png')} /> : <></>}
                       </View>
                       <View style={{marginTop:5}}>
                         <Text style={{fontSize:22,fontWeight:'700'}}>{item.language}</Text>
@@ -80,15 +71,10 @@ const SetLanguageScreen = ({navigation}) => {
             </View>
         </ScrollView>
       </View>
+	    <View style={{flex:0.1,width:'90%', marginTop:10, alignSelf:'center'}}>
+		<SubmitBtn submitText={"Continue"} callbackFunc={() => {navigation.navigate('SetupBio')}} theme={"#EFB14E"}/>
+	</View>
       <View style={styles.termsContainer}>
-        <TouchableOpacity
-          onPress={() => {
-            navigation.navigate('SetupBio');
-          }}
-          style={styles.loginBtn}>
-          <Text style={styles.loginBtnText}>Continue</Text>
-        </TouchableOpacity>
-
         <Text style={{textAlign:"center",fontSize:18,width:'90%',alignSelf:'center',marginTop:10}}>
           By Continuing you agree to our <Text style={{fontWeight:'700',color:'#EFB14E'}}>Terms of Use</Text>  and 
           <Text style={{fontWeight:'700',color:'#EFB14E'}}> Privacy Policy</Text>
@@ -102,11 +88,12 @@ const styles = StyleSheet.create({
   termsContainer: {
     height: 120,
     width: SCREEN_WIDTH,
+    flex:0.1,
     marginTop:15
   },
   lowerSection: {
     display: 'flex',
-    flex: 1,
+    flex: 0.8,
     marginTop: 50,
   },
   languages : {

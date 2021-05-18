@@ -1,10 +1,10 @@
 import React from 'react';
 import {Dimensions, Image,TextInput, View, Text, SafeAreaView,TouchableOpacity, StyleSheet} from 'react-native';
-import Email from '../assets/images/email.png';
-import InputView from '../components/InputView.js';
-import SubmitBtn from '../components/SubmitBtn.js';
-import GoogleLogo from '../assets/images/google.png';
-import SideViews from '../components/SideViews.js';
+import Email from 'assets/images/email.png';
+import InputView from 'components/InputView.js';
+import SubmitBtn from 'components/SubmitBtn.js';
+import GoogleLogo from 'assets/images/google.png';
+import SideViews from 'components/SideViews.js';
 
 const height = Dimensions.get('window').height;
 const width = Dimensions.get('window').width;

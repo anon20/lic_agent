@@ -2,9 +2,9 @@ import React,{useState} from 'react';
 import { View,TextInput, Text,StyleSheet,Dimensions,Image,TouchableOpacity,ScrollView,SafeAreaView } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import MaterialIcon from 'react-native-vector-icons/MaterialCommunityIcons';
-import HomeTabs from '../components/HomeTabs';
+import HomeTabs from 'components/HomeTabs';
 import ProgressCircle from 'react-native-progress-circle'
-import {COLORS} from '../assets/Colors/Colors';
+import {COLORS} from 'assets/Colors/Colors';
 const SCREEN_HEIGHT = Dimensions.get('window').height;
 const SCREEN_WIDTH = Dimensions.get('window').width;
 

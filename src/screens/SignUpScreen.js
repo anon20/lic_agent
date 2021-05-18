@@ -11,7 +11,7 @@ import {
 } from "react-native";
 import Icon from "react-native-vector-icons/FontAwesome";
 import MaterialIcon from "react-native-vector-icons/MaterialCommunityIcons";
-import emailIcon from "../assets/images/email.png";
+import emailIcon from "assets/images/email.png";
 import * as Animatable from "react-native-animatable";
 import { RotationGestureHandler } from "react-native-gesture-handler";
 const SCREEN_HEIGHT = Dimensions.get("window").height;
@@ -60,7 +60,7 @@ const SignUpScreen = ({ navigation }) => {
                 style={{ alignSelf: "center", height: 20, width: 20 }}
                 height={20}
                 width={20}
-                source={require("../assets/images/name.png")}
+                source={require("assets/images/name.png")}
               />
             </View>
             <View style={{ flex: 1 }}>
@@ -81,7 +81,7 @@ const SignUpScreen = ({ navigation }) => {
                 style={{ alignSelf: "center", height: 20, width: 20 }}
                 height={20}
                 width={20}
-                source={require("../assets/images/birthday-cake.png")}
+                source={require("assets/images/birthday-cake.png")}
               />
             </View>
             <View style={{ flex: 1 }}>
@@ -102,7 +102,7 @@ const SignUpScreen = ({ navigation }) => {
                 style={{ alignSelf: "center", height: 20, width: 20 }}
                 height={20}
                 width={20}
-                source={require("../assets/images/gender-symbols.png")}
+                source={require("assets/images/gender-symbols.png")}
               />
             </View>
             <View style={{ flex: 1 }}>
@@ -131,7 +131,7 @@ const SignUpScreen = ({ navigation }) => {
           style={styles.upperSectionRight}
         ></Animatable.View>
          <TouchableOpacity style={{display:'flex',justifyContent:'center',marginRight:20}}>
-                 <Image style={{alignSelf:'center',height:45,width:45}} height={45} width={45} source={require('../assets/images/right-arrow.png')} />
+                 <Image style={{alignSelf:'center',height:45,width:45}} height={45} width={45} source={require('assets/images/right-arrow.png')} />
                  <Text style={{fontSize:18,fontWeight:'500',textAlign:'center'}}>Skip</Text>
             </TouchableOpacity>
       </View>

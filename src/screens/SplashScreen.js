@@ -16,7 +16,7 @@ const SplashScreen = ({navigation}) => {
             <Animatable.Image 
               animation="bounceIn"
                style={{alignSelf:'center'}}
-              source={require('../assets/images/Agent.png')}
+              source={require('assets/images/Agent.png')}
               />
           </View>
           <Animatable.View 
