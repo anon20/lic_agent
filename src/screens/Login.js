@@ -17,14 +17,14 @@ export default props => {
 				{/* Logo will be attached here */}
 			</View>
 			<View style={[styles.loginArea]}>
-				<View style={[styles.singleFlex]}>
+				<View style={[styles.singleFlex, {flex: 0.13}]}>
 					<Text style={[styles.titleText, styles.customFont]}>Login</Text>
 				</View>
 				<View style={[styles.singleFlex]}>
 					<Text style={[styles.subTitleText, styles.customFont]}>Sign in to Continue</Text>
 				</View>
 				<View style={[{flex:0.20}]}>
-					<InputView img={Email} textType={"Email"}/>	
+					<InputView img={Email} textType={"Email"} keyboardType={"email-address"}/>	
 				</View>
 				<View style={[{flex:0.15}]}>
 					<SubmitBtn submitText={"Continue"} theme={"#EFB14E"} />
