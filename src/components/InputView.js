@@ -1,7 +1,7 @@
 
 import React from 'react';
 import {Image,TextInput, View, Text, SafeAreaView, StyleSheet} from 'react-native';
-import Email from '../assets/images/email.png';
+import Email from 'assets/images/email.png';
 
 export default props => {
 	return (

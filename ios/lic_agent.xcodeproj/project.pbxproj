@@ -21,6 +21,10 @@
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
 		A950E5801344C3FA07C11162 /* libPods-lic_agent-tvOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C4D143E1B3CAE0A16FED186 /* libPods-lic_agent-tvOSTests.a */; };
 		ED82D40D034F19F56F50D764 /* libPods-lic_agent-lic_agentTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 41DB61BDE0D93839DEA1AB6F /* libPods-lic_agent-lic_agentTests.a */; };
+		EDCF26482651B07500261D54 /* PTSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDCF26472651B07500261D54 /* PTSans-Bold.ttf */; };
+		EDCF26492651B07500261D54 /* PTSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDCF26472651B07500261D54 /* PTSans-Bold.ttf */; };
+		EDCF264A2651B07500261D54 /* PTSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDCF26472651B07500261D54 /* PTSans-Bold.ttf */; };
+		EDCF264B2651B07500261D54 /* PTSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDCF26472651B07500261D54 /* PTSans-Bold.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,6 +85,7 @@
 		CF72AAAD66A641918B9DC392 /* Fontisto.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Fontisto.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Fontisto.ttf"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		ED2971642150620600B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS12.0.sdk/System/Library/Frameworks/JavaScriptCore.framework; sourceTree = DEVELOPER_DIR; };
+		EDCF26472651B07500261D54 /* PTSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "PTSans-Bold.ttf"; path = "../src/assets/fonts/PTSans-Bold.ttf"; sourceTree = "<group>"; };
 		F1C1369FC9244842AD785EDC /* Foundation.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Foundation.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Foundation.ttf"; sourceTree = "<group>"; };
 		F2A3FF89D0204C7EAD753645 /* Zocial.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Zocial.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Zocial.ttf"; sourceTree = "<group>"; };
 		F9F56EB9E0A34524CDB14AA6 /* libPods-lic_agent-tvOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-lic_agent-tvOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -213,6 +218,7 @@
 				8F4E04CDADDC4A00935DE6EF /* FontAwesome5_Regular.ttf */,
 				50FB156686914F0E95732FB2 /* FontAwesome5_Solid.ttf */,
 				CF72AAAD66A641918B9DC392 /* Fontisto.ttf */,
+				EDCF26472651B07500261D54 /* PTSans-Bold.ttf */,
 				F1C1369FC9244842AD785EDC /* Foundation.ttf */,
 				138CA9AC4D4F4A8792B9EA3E /* Ionicons.ttf */,
 				27EE21711E0E47059E4209CA /* MaterialCommunityIcons.ttf */,
@@ -377,6 +383,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EDCF26492651B07500261D54 /* PTSans-Bold.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -386,6 +393,7 @@
 			files = (
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
+				EDCF26482651B07500261D54 /* PTSans-Bold.ttf in Resources */,
 				2C4311D5BCCA478891C30CC7 /* PTSans-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -394,6 +402,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EDCF264A2651B07500261D54 /* PTSans-Bold.ttf in Resources */,
 				2D02E4BD1E0B4A84006451C7 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -402,6 +411,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EDCF264B2651B07500261D54 /* PTSans-Bold.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
