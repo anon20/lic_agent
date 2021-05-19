@@ -1,23 +1,21 @@
 
 import React from 'react';
-import {Image,TextInput, View, Text, SafeAreaView, StyleSheet} from 'react-native';
-import Email from 'assets/images/email.png';
+import {Image,TextInput, View, StyleSheet} from 'react-native';
 
 export default props => {
 	return (
-		<View style={[styles.emailInputView]}>
-			<View style={[{flex:0.1, height:50, alignItems:'center', justifyContent:'center'}]}>
+		<View style={[styles.InputView]}>
+			<View style={[styles.ImageView]}>
 				<Image 
 					source={props.img}
-					style={{marginLeft:20, width:20, height:20}}
+					style={[styles.imageStyle]}
 				/>
 			</View>
 			<View style={[{flex:0.9}]}>
 				<TextInput  
-					style={[{justifyContent:'center', fontSize:14, padding:20}]}
-					placeholder={"Email"}
-					keyboardType={"email-address"}
-		
+					style={[styles.textInputStyle]}
+					placeholder={props.textType}
+					keyboardType={props.keyboardType}
 				/>
 			</View>
 		</View>
@@ -44,7 +42,7 @@ const styles = StyleSheet.create({
 	titleText:{
 		fontSize:40,
 	},
-	emailInputView:{
+	InputView:{
 		backgroundColor:'white',
       		shadowOffset: {
       		    width: 0,
@@ -62,5 +60,22 @@ const styles = StyleSheet.create({
 	subTitleText:{
 		fontSize:18,
 		color:'grey'
+	},
+	ImageView:{
+		flex:0.1, 
+		height:50, 
+		alignItems:'center', 
+		justifyContent:'center', 
+		alignSelf: "center"
+	},
+	textInputStyle:{
+		justifyContent:'center', 
+		fontSize:14, 
+		padding:20
+	},
+	imageStyle:{
+		marginLeft:20, 
+		width:20, 
+		height:20
 	}
 });
