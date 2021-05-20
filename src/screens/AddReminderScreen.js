@@ -40,12 +40,11 @@ function AddReminderScreen({navigation}) {
                   <MaterialIcon style={{paddingLeft:20}} name="chevron-left" color="#707070" size={25}/>
 
                 </TouchableOpacity>
-                <Text style={{fontSize:28,fontWeight:'bold',color:'#003C9A',paddingLeft:20}}>Reminders</Text>
+                <Text style={styles.reminders}>Reminders</Text>
             </View>
 
-            <View style={{display:"flex",flexDirection:'row',justifyContent:'center',alignItems:'center',borderWidth:1,width:SCREEN_WIDTH/1.2,alignSelf:'center',borderColor:'transparent',
-        borderBottomColor: '#707070',}}>
-            <MaterialIcon style={{flex:0.1}} name="user" color="#003C9A" size={24}/>
+            <View style={styles.textInputView}>
+            <MaterialIcon style={styles.textInputMaterialIcon} name="user" color="#003C9A" size={24}/>
             <TextInput style = {[styles.input,{flex:0.9}]}
                underlineColorAndroid = "transparent"
                placeholder = "Full Name"
@@ -55,9 +54,8 @@ function AddReminderScreen({navigation}) {
                onChangeText = {(e)=>setName(e)}/>
                 
             </View>
-            <View style={{display:"flex",flexDirection:'row',justifyContent:'center',alignItems:'center',borderWidth:1,width:SCREEN_WIDTH/1.2,alignSelf:'center',borderColor:'transparent',
-            borderBottomColor: '#707070',marginTop:10}}>
-            <MaterialIcon style={{flex:0.1}} name="phone" color="#003C9A" size={24}/>
+            <View style={styles.textInputView}>
+            <MaterialIcon style={styles.textInputMaterialIcon} name="phone" color="#003C9A" size={24}/>
             <TextInput style = {[styles.input,{flex:0.9}]}
                underlineColorAndroid = "transparent"
                placeholder = "Phone no. "
@@ -67,9 +65,8 @@ function AddReminderScreen({navigation}) {
                onChangeText = {(e)=>setPhone(e)}/>
                 
             </View>
-            <View  style={{display:"flex",flexDirection:'row',justifyContent:'center',alignItems:'center',borderWidth:1,width:SCREEN_WIDTH/1.2,alignSelf:'center',borderColor:'transparent',
-            borderBottomColor: '#707070',marginTop:10}}>
-            <MaterialIcon onPress={showDatepicker} style={{flex:0.1}} name="calendar" color="#003C9A" size={24}/>
+            <View  style={styles.textInputView}>
+            <MaterialIcon style={styles.textInputMaterialIcon} onPress={showDatepicker} name="calendar" color="#003C9A" size={24}/>
             <TextInput style = {[styles.input,{flex:0.9}]}
                underlineColorAndroid = "transparent"
                placeholder = "Policy Maturity Date "
@@ -89,9 +86,8 @@ function AddReminderScreen({navigation}) {
                 onChange={onChange}
                 />
             )}
-            <View style={{display:"flex",flexDirection:'row',justifyContent:'center',alignItems:'center',borderWidth:1,width:SCREEN_WIDTH/1.2,alignSelf:'center',borderColor:'transparent',
-            borderBottomColor: '#707070',marginTop:10}}>
-            <MaterialIcon style={{flex:0.1}} name="map-marker" color="#003C9A" size={24}/>
+            <View style={styles.textInputView}>
+            <MaterialIcon style={styles.textInputMaterialIcon} name="map-marker" color="#003C9A" size={24}/>
             <TextInput style = {[styles.input,{flex:0.9}]}
                underlineColorAndroid = "transparent"
                placeholder = "Purpose"
@@ -105,7 +101,7 @@ function AddReminderScreen({navigation}) {
             <TouchableOpacity underlayColor='blue' style={styles.addNewBtnContainer} onPress={()=>navigation.navigate('AddReminder')}>
             <View style={styles.addNewClientBtn}>
                      <MaterialIcon name="plus-circle" color="#707070" size={30}/>
-                     <Text style={{fontSize:24,fontWeight:'bold',color:'#003C9A',paddingLeft:10}}>Add Reminder</Text>
+                     <Text style={styles.addReminder}>Add Reminder</Text>
             </View>
             </TouchableOpacity>
            
@@ -138,6 +134,38 @@ const styles = StyleSheet.create({
         marginTop:50,
         borderWidth:0.5,
         borderColor:'#003C9A',
-        borderRadius:10},
-})
+        borderRadius:10
+      },
+    textInputView: {
+      display:"flex",
+      flexDirection:'row',
+      justifyContent:'center',
+      alignItems:'center',
+      borderWidth:1,
+      width:SCREEN_WIDTH/1.2,
+      alignSelf:'center',
+      borderColor:'transparent',
+      borderBottomColor: '#707070'
+    },
+
+    textInputMaterialIcon: {
+      flex:0.1,
+    },
+
+    addReminder: {
+      fontSize:24,
+      fontWeight:'bold',
+      color:'#003C9A',
+      paddingLeft:10
+    },
+
+    reminders: {
+      fontSize:28,
+      fontWeight:'bold',
+      color:'#003C9A',
+      paddingLeft:20
+    },
+    
+
+  })
 export default AddReminderScreen
