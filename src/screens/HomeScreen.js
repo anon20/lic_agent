@@ -40,11 +40,11 @@ const HomeScreen = ({navigation}) => {
             <View style={styles.usertarget_container}>
                 <View style={{flex:0.6}}>
                     <View style={{flex:1,justifyContent:'center'}}>
-                        <Text style={{fontSize:24,fontWeight:'bold',paddingLeft:20}}>My Goal</Text>
+                        <Text style={styles.myGoal}>My Goal</Text>
                     </View>
                     <View style={{flex:1}}>
-                        <Text style={{fontSize:16,paddingLeft:20}}>Achieved : Rs 500000</Text>
-                        <Text style={{fontSize:16,paddingLeft:20}}>Pending : Rs 500000</Text>
+                        <Text style={styles.achievedAndPending}>Achieved : Rs 500000</Text>
+                        <Text style={styles.achievedAndPending}>Pending : Rs 500000</Text>
                     </View>
                 </View>
                 <View  style={{flex:0.4,justifyContent:'center',alignItems:'center'}}>
@@ -196,6 +196,18 @@ const styles = StyleSheet.create({
     marginTop:10,
     justifyContent:'space-around',
 },
+
+achievedAndPending: {
+    fontSize:16,
+    paddingLeft:20
+},
+
+myGoal: {
+    fontSize:24,
+    fontWeight:'bold',
+    paddingLeft:20
+},
+
 
 })
 
