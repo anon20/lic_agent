@@ -27,7 +27,7 @@ const SignUpScreen = ({ navigation }) => {
   };
 
   return (
-    <SafeAreaView style={{ flex: 1, backgroundColor: "white" }}>
+    <SafeAreaView style={styles.safeAreaView}>
       <Animatable.View
         animation="fadeInDown"
         style={styles.upperSection}
@@ -36,28 +36,22 @@ const SignUpScreen = ({ navigation }) => {
       <View style={styles.lowerSection}>
         <View style={{ width: "90%", alignSelf: "center" }}>
           <View>
-            <Text style={{ fontSize: 32, fontWeight: "500" }}>
+            <Text style={styles.letUsKnowYouText}>
               Let us know you
             </Text>
             <Text
-              style={{
-                fontSize: 16,
-                fontWeight: "500",
-                color: "black",
-                opacity: 0.5,
-                marginTop: 5,
-              }}
+              style={styles.youMaySkipThisSection}
             >
               You may skip this section
             </Text>
           </View>
           <View style={[{ flexDirection: "row" }, styles.textbox]}>
             <View
-              style={{ flex: 0.1, justifyContent: "center", paddingLeft: 10 }}
+              style={styles.imageView}
             >
               {/* <MaterialIcon style={{alignSelf:'center'}} name="{"email" size={20}/> */}
               <Image
-                style={{ alignSelf: "center", height: 20, width: 20 }}
+                style={styles.image}
                 height={20}
                 width={20}
                 source={require("assets/images/name.png")}
@@ -65,7 +59,7 @@ const SignUpScreen = ({ navigation }) => {
             </View>
             <View style={{ flex: 1 }}>
               <TextInput
-                style={styles.email}
+                style={styles.inputText}
                 onChangeText={(text) => setName(text)}
                 value={name}
                 placeholder="Full Name"
@@ -74,11 +68,11 @@ const SignUpScreen = ({ navigation }) => {
           </View>
           <View style={[{ flexDirection: "row" }, styles.textbox]}>
             <View
-              style={{ flex: 0.1, justifyContent: "center", paddingLeft: 10 }}
+              style={styles.imageView}
             >
               {/* <MaterialIcon style={{alignSelf:'center'}} name="{"email" size={20}/> */}
               <Image
-                style={{ alignSelf: "center", height: 20, width: 20 }}
+                style={styles.image}
                 height={20}
                 width={20}
                 source={require("assets/images/birthday-cake.png")}
@@ -86,7 +80,7 @@ const SignUpScreen = ({ navigation }) => {
             </View>
             <View style={{ flex: 1 }}>
               <TextInput
-                style={styles.email}
+                style={styles.inputText}
                 onChangeText={(text) => setDob(text)}
                 value={dob}
                 placeholder="Date of Birth"
@@ -95,11 +89,11 @@ const SignUpScreen = ({ navigation }) => {
           </View>
           <View style={[{ flexDirection: "row" }, styles.textbox]}>
             <View
-              style={{ flex: 0.1, justifyContent: "center", paddingLeft: 10 }}
+              style={styles.imageView}
             >
               {/* <MaterialIcon style={{alignSelf:'center'}} name="{"email" size={20}/> */}
               <Image
-                style={{ alignSelf: "center", height: 20, width: 20 }}
+                style={styles.image}
                 height={20}
                 width={20}
                 source={require("assets/images/gender-symbols.png")}
@@ -107,7 +101,7 @@ const SignUpScreen = ({ navigation }) => {
             </View>
             <View style={{ flex: 1 }}>
               <TextInput
-                style={styles.email}
+                style={styles.inputText}
                 onChangeText={(text) => setGender(text)}
                 value={gender}
                 placeholder="Gender"
@@ -125,7 +119,7 @@ const SignUpScreen = ({ navigation }) => {
           <Text style={styles.loginBtnText}>Continue</Text>
         </TouchableOpacity>
       </View>
-      <View style={{display:'flex',justifyContent:'space-between',flexDirection:'row'}}>
+      <View style={{display:'flex',justifyContent:'space-between', flexDirection:'row'}}>
         <Animatable.View
           animation="fadeInUp"
           style={styles.upperSectionRight}
@@ -168,7 +162,7 @@ const styles = StyleSheet.create({
     color: "black",
     // fontFamily:'AndikaNewBasic-Bold'
   },
-  email: {
+  inputText: {
     fontSize: 18,
     fontWeight: "700",
     paddingLeft: 10,
@@ -211,6 +205,35 @@ const styles = StyleSheet.create({
     fontWeight: "700",
     borderColor: "gray",
   },
+
+  image: { 
+    alignSelf: "center", 
+    height: 20, 
+    width: 20 
+  },
+
+  safeAreaView: { 
+    flex: 1, 
+    backgroundColor: "white" },
+
+  letUsKnowYouText: { 
+    fontSize: 32, 
+    fontWeight: "500" },
+
+  youMaySkipThisSection: {
+    fontSize: 16,
+    fontWeight: "500",
+    color: "black",
+    opacity: 0.5,
+    marginTop: 5,
+  },
+
+  imageView: { 
+    flex: 0.1, 
+    justifyContent: "center", 
+    paddingLeft: 10 
+  }
+
 });
 
 export default SignUpScreen;
