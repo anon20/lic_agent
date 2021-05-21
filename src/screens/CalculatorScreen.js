@@ -69,25 +69,41 @@ function CalculatorScreen({navigation}) {
   };
 
     return (
-        <SafeAreaView style={{flex:1}}>
-            <View style={{height:SCREEN_HEIGHT/10,display:'flex',flexDirection:'row',alignItems:'center'}}>
+        <SafeAreaView style={styles.safeAreaView}>
+            <View style={styles.safeAreaViewInnerView}>
                 <TouchableOpacity onPress={()=>navigation.goBack()}>
-                  <MaterialIcon style={{paddingLeft:20}} name="chevron-left" color="#707070" size={25}/>
+                  <MaterialIcon style={styles.materialIcon} name="chevron-left" color="#707070" size={25}/>
 
                 </TouchableOpacity>
-                <Text style={{fontSize:28,fontWeight:'bold',color:'#003C9A',paddingLeft:20}}>Calculator</Text>
+                <Text style={styles.textCalculator}>Calculator</Text>
             </View>
-          
-            
-          
-           
         </SafeAreaView>
     )
 }
 
 const styles = StyleSheet.create ({
  
+  safeAreaView: {
+    flex:1
+  },
 
+  safeAreaViewInnerView: {
+    height:SCREEN_HEIGHT/10,
+    display:'flex',
+    flexDirection:'row',
+    alignItems:'center'
+  },
+
+  materialIcon: {
+    paddingLeft:20
+  },
+
+  textCalculator: {
+    fontSize:28,
+    fontWeight:'bold',
+    color:'#003C9A',
+    paddingLeft:20
+  },
 })
 
 export default CalculatorScreen
