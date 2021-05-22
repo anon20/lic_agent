@@ -20,7 +20,7 @@ const LoginMobileScreen = ({navigation}) => {
   }
 
     return (
-        <SafeAreaView style={{ flex: 1,backgroundColor:"white"}}>
+        <SafeAreaView style={styles.safeAreaView}>
            <Animatable.View 
             animation="fadeInDown"
              style={styles.upperSection}>
@@ -166,6 +166,11 @@ const styles = StyleSheet.create({
     fontWeight:'700',
     borderColor: 'gray', 
    },
+
+   safeAreaView: { 
+     flex: 1,
+     backgroundColor:"white"
+    },
 
 })
 
