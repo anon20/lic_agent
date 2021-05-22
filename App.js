@@ -3,7 +3,8 @@ import React,{useContext,useState,useEffect} from 'react';
 import {
   StyleSheet,
 } from 'react-native';
-import NavApp from './src/navigation/index'
+import NavApp from './src/navigation/index';
+import firebase from '@react-native-firebase/auth';
 
 const App = () => {
 

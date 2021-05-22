@@ -44,6 +44,7 @@ const StackNavigation = () =>{
         }
         }>
           
+        <Stack.Screen name="Login" component={LoginScreen} />
         <Stack.Screen name="Splash" component={SplashScreen} />
         <Stack.Screen name="SetupBio" component={SetupBioScreen}/>
         <Stack.Screen name="ContBio" component={ContBioScreen}/>
@@ -57,7 +58,6 @@ const StackNavigation = () =>{
         <Stack.Screen name="Notes" component={Notes}/>
         <Stack.Screen name="CreateNotes" component={CreateNotes}/>
         <Stack.Screen name="ListClient" component={ListClient} />
-        <Stack.Screen name="Login" component={LoginScreen} />
         <Stack.Screen name="Reminder" component={ReminderScreen}/>
         <Stack.Screen name="AddReminder" component={AddReminderScreen}/>
         <Stack.Screen name="ReminderDesc" component={ReminderDescScreen}/>
