@@ -1,5 +1,5 @@
 
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import {Image,TextInput, View, StyleSheet} from 'react-native';
 
 export default props => {
@@ -14,6 +14,8 @@ export default props => {
 			<View style={[{flex:0.9}]}>
 				<TextInput  
 					style={[styles.textInputStyle]}
+					value={props.value}
+		onChangeText={input=>props.setInput(input)}
 					placeholder={props.textType}
 					keyboardType={props.keyboardType}
 				/>

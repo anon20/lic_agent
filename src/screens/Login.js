@@ -1,15 +1,57 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import {Dimensions, Image,TextInput, View, Text, SafeAreaView,TouchableOpacity, StyleSheet} from 'react-native';
 import Email from 'assets/images/email.png';
+import Phone from 'assets/images/phone-call.png';
+import Pass from 'assets/images/password.png'
 import InputView from 'components/InputView.js';
 import SubmitBtn from 'components/SubmitBtn.js';
 import GoogleLogo from 'assets/images/google.png';
 import SideViews from 'components/SideViews.js';
+import auth from '@react-native-firebase/auth';
+
+const settings = auth().settings;
+console.log(settings.appVerificationDisabledForTesting);
+	
 
 const height = Dimensions.get('window').height;
 const width = Dimensions.get('window').width;
 
 export default props => {
+	const [confirmationCode, setConfirmationCode] = useState('');
+	const [phoneNumber, setPhoneNumber] = useState('');
+	const [smsSent, setSmsSent] = useState(false);
+	const [verificationCode, setVerificationCode] = useState('');
+	const authenticatePhone = async() => {
+		if(!smsSent)
+		{
+			const confirmation = await auth().signInWithPhoneNumber(phoneNumber)
+			setSmsSent(confirmation);
+			setPhoneNumber('');
+		}
+		else
+		{
+			console.log(`verifying phone`);
+			try{
+				await smsSent.confirm(verificationCode);
+				alert(`User Authenticated`);
+				console.log(auth().currentUser.uid);
+			}
+			catch(err){
+				console.log(err);
+			}
+		}	 	
+	}
+	const verifyPhone = async () => {
+		console.log(`verifying phone`);
+		try{
+			await smsSent.confirm(confirmationCode);
+			alert(`User Authenticated`);
+		}
+		catch(err){
+			console.log(`error`);
+		}
+	
+	}
 	return (
 		<SafeAreaView style={[styles.parentView]}>
 			<SideViews />
@@ -18,28 +60,29 @@ export default props => {
 			</View>
 			<View style={[styles.loginArea]}>
 				<View style={[styles.singleFlex, {flex: 0.13}]}>
-					<Text style={[styles.titleText, styles.customFont]}>Login</Text>
+					<Text style={[styles.titleText, styles.customFont]}>{smsSent?'Verification':'Login'}</Text>
 				</View>
 				<View style={[styles.singleFlex]}>
-					<Text style={[styles.subTitleText, styles.customFont]}>Sign in to Continue</Text>
+					<Text style={[styles.subTitleText, styles.customFont]}>{smsSent?'Enter One Time Password Sent On Your Phone via SMS':'Sign in to Continue'}</Text>
 				</View>
 				<View style={[{flex:0.20}]}>
-					<InputView img={Email} textType={"Email"} keyboardType={"email-address"}/>	
+					{smsSent?<InputView setInput={setVerificationCode} value={verificationCode} img={Pass} textType={"OTP"} keyboardType={"number-pad"}/>	:
+					<InputView setInput={setPhoneNumber} img={Phone} textType={"Phone"} value={phoneNumber} keyboardType={"number-pad"}/>	}
 				</View>
 				<View style={[{flex:0.15}]}>
-					<SubmitBtn submitText={"Continue"} theme={"#EFB14E"} />
+					{smsSent ?<SubmitBtn callbackFunc={() => authenticatePhone(verifyPhone)} submitText={"Verify"} theme={"#EFB14E"} /> : <SubmitBtn callbackFunc={() => authenticatePhone(phoneNumber)} submitText={"Continue"} theme={"#EFB14E"} />}
 				</View>
-				<View style={[{flex:0.2, alignItems:'center'}]}>
+				{/*}<View style={[{flex:0.2, alignItems:'center'}]}>
 					<Text style={[styles.titleText, styles.customFont]}>or</Text>
 				</View>
 				<View style={[styles.singleFlex, {alignItems:'center'}]}>
-					<TouchableOpacity>
+					<TouchableOpacity >
 						<Image 
 							source={GoogleLogo}
 							style={{width:70, height:70}}
 						/>
 					</TouchableOpacity>
-				</View>
+				</View>*/}
 			</View>
 		</SafeAreaView>
 	)

@@ -10,6 +10,7 @@ module.exports = {
     extraNodeModules:{
 	components: `${__dirname}/src/components`,
 	assets: `${__dirname}/src/assets`,
+	'@images': `${__dirname}/src/assets/images`,
 	screens: `${__dirname}/src/screens`
     }
   },
