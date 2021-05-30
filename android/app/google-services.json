@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "840759213294",
+    "project_id": "agent-app-344af",
+    "storage_bucket": "agent-app-344af.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:840759213294:android:7ac33f031f95d313d4c7ff",
+        "android_client_info": {
+          "package_name": "com.lic_agent"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "840759213294-gkaidruiv3ft32lou7ri03ct7qjoej0g.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB2sTWODNlF6bm86y0MJzl4xhXxJIs2d8Y"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "840759213294-gkaidruiv3ft32lou7ri03ct7qjoej0g.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "840759213294-ffe742dc8dfc30ddt7fr4f9l1au1qkk5.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.licagent"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
