@@ -8,6 +8,7 @@ import SubmitBtn from 'components/SubmitBtn.js';
 import GoogleLogo from 'assets/images/google.png';
 import SideViews from 'components/SideViews.js';
 import auth from '@react-native-firebase/auth';
+import {loginUser} from 'APIs/login';
 
 const settings = auth().settings;
 console.log(settings.appVerificationDisabledForTesting);
@@ -35,6 +36,10 @@ export default props => {
 				await smsSent.confirm(verificationCode);
 				alert(`User Authenticated`);
 				console.log(auth().currentUser.uid);
+				loginUser(auth().currentUser.uid, '345345')
+					.then(resp => {
+					alert(resp)
+							})
 			}
 			catch(err){
 				console.log(err);
