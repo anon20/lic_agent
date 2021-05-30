@@ -5,6 +5,8 @@ import MaterialIcon from 'react-native-vector-icons/MaterialCommunityIcons';
 import emailIcon from '../assets/images/email.png';
 import * as Animatable from 'react-native-animatable';
 import { RotationGestureHandler } from 'react-native-gesture-handler';
+import Language from '../assets/language/texts.json';
+import {LangContext} from '../contextApi/Language';
 const SCREEN_HEIGHT = Dimensions.get('window').height;
 const SCREEN_WIDTH = Dimensions.get('window').width;
 
@@ -13,7 +15,7 @@ const LoginScreen = ({navigation}) => {
 
   const [email, setEmail] = React.useState('');
   const [password, setPassword] = React.useState('');
-
+  const {lang} = React.useContext(LangContext)
     
   const loginHandler = () => {
     navigation.navigate('Home')
@@ -31,8 +33,8 @@ const LoginScreen = ({navigation}) => {
             style={styles.lowerSection}>
             <View style={{width:'90%',alignSelf:'center'}}>
               <View>
-                <Text style={{fontSize:32,fontWeight:'500'}}>Login</Text>
-                <Text style={{fontSize:16,fontWeight:'500',color:'black',opacity:0.5,marginTop:5}}>Sign in to continue</Text>
+                <Text style={{fontSize:32,fontWeight:'500'}}>{Language.login[lang]}</Text>
+                <Text style={{fontSize:16,fontWeight:'500',color:'black',opacity:0.5,marginTop:5}}>{Language.signInToContinue[lang]}</Text>
               </View>
                <View style={[{flexDirection:'row'},styles.textbox]}>
                  <View style={{flex:0.1,justifyContent:'center',paddingLeft:10}}>

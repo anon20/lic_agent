@@ -15,6 +15,8 @@ import MaterialIcon from 'react-native-vector-icons/MaterialCommunityIcons';
 import emailIcon from '../assets/images/email.png';
 import * as Animatable from 'react-native-animatable';
 import {RotationGestureHandler} from 'react-native-gesture-handler';
+import {LangContext} from '../contextApi/Language.js'
+import Language from '../assets/language/texts.json'
 const SCREEN_HEIGHT = Dimensions.get('window').height;
 const SCREEN_WIDTH = Dimensions.get('window').width;
 
@@ -22,20 +24,25 @@ const SetLanguageScreen = ({navigation}) => {
   const [email, setEmail] = React.useState('');
   const [password, setPassword] = React.useState('');
   const [selectedLang,setSelectedLang] = React.useState(0)
+  const {changeLang,setLang,lang} = React.useContext(LangContext)
   const loginHandler = () => {
     navigation.navigate('Home');
   };
 
+ const selectLanguage = (lang,key) => {
+    setSelectedLang(key)
+    changeLang(lang)
+ }
   const LanguageTabs = [
-    {'language':'english','desc':'You are reading this in english'},
-    {'language':'Hindi','desc':'You are reading this in english'},
-    {'language':'Punjabi','desc':'You are reading this in english'},
-    {'language':'Telugu','desc':'You are reading this in english'},
-    {'language':'Malyalam','desc':'You are reading this in english'},
-    {'language':'Tamil','desc':'You are reading this in english'},
+    {'language':'english','desc':'You are reading this in english','symbol':'en'},
+    {'language':'Hindi','desc':'You are reading this in english','symbol':'hi'},
+    {'language':'Punjabi','desc':'You are reading this in english','symbol':'pnb'},
+    {'language':'Telugu','desc':'You are reading this in english','symbol':'tel'},
+    {'language':'Malyalam','desc':'You are reading this in english','symbol':'mal'},
+    {'language':'Tamil','desc':'You are reading this in english','symbol':'tam'},
     
-    {'language':'Malyalam','desc':'You are reading this in english'},
-    {'language':'Tamil','desc':'You are reading this in english'},
+    {'language':'Malyalam','desc':'You are reading this in english','symbol':'mal'},
+    {'language':'Tamil','desc':'You are reading this in english','symbol':'tam'},
   
   ]
   return (
@@ -64,7 +71,7 @@ const SetLanguageScreen = ({navigation}) => {
 
               {LanguageTabs.map((item,key)=>{
                 return (
-                  <TouchableOpacity key={key} style={styles.languages} onPress={()=>setSelectedLang(key)}>
+                  <TouchableOpacity key={key} style={styles.languages} onPress={()=>selectLanguage(item.symbol,key)}>
                   <View style={{height:'100%',width:'90%',alignSelf:'center'}}>
                       <View style={{marginTop:5,height:25}}>
                       {selectedLang==key?  <Image style={{height:25,width:25,alignSelf:'flex-end'}} source={require('../assets/images/check-mark.png')} /> : <></>}
@@ -88,7 +95,7 @@ const SetLanguageScreen = ({navigation}) => {
             navigation.navigate('SetupBio');
           }}
           style={styles.loginBtn}>
-          <Text style={styles.loginBtnText}>Continue</Text>
+          <Text style={styles.loginBtnText}>{Language.continue[lang]}</Text>
         </TouchableOpacity>
 
         <Text style={{textAlign:"center",fontSize:18,width:'90%',alignSelf:'center',marginTop:10}}>

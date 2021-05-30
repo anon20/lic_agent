@@ -7,11 +7,18 @@ import {
 
 import { NavigationContainer } from '@react-navigation/native';
 import StackNavigation from './StackNavigation.js'
-
+import {LangContext} from '../contextApi/Language.js'
 const nav = () => {
 
-  
+  const {setLangFirstTime} = React.useContext(LangContext)
 
+  React.useEffect(()=>{
+    setLang()
+  },[])
+
+  const setLang = () => {
+    setLangFirstTime()
+  }
   return (
     <>
       <NavigationContainer>
