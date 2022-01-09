@@ -3,30 +3,41 @@ import { View,TextInput, Text,StyleSheet,Dimensions,Image,TouchableOpacity, Safe
 import Icon from 'react-native-vector-icons/FontAwesome';
 import MaterialIcon from 'react-native-vector-icons/MaterialCommunityIcons';
 import emailIcon from 'assets/images/email.png';
-import * as Animatable from 'react-native-animatable';
-import { RotationGestureHandler } from 'react-native-gesture-handler';
 const SCREEN_HEIGHT = Dimensions.get('window').height;
 const SCREEN_WIDTH = Dimensions.get('window').width;
-import PasswordImg from 'assets/images/password.png';
+import InputView from 'components/InputView.js';
+import Pass from 'assets/images/password.png'
+import SubmitBtn from 'components/SubmitBtn.js';
+import SideViews from 'components/SideViews.js';
 
-
-const OTPScreen = ({navigation}) => {
+const OTPScreen = props => {
 
   const [otp, setOtp] = React.useState('');
   const [password, setPassword] = React.useState('');
 
-    
+  const authenticateOTP = async() => {
+	try{
+	    let {confirmOTP, phoneNumber} = props.navigation.state;
+	    await confrimOTP(otp, phoneNumber);
+	    auth().currentUser.getIdToken()
+	    .then(resp => {
+	    	loginUser(resp, )
+	    	.then(resp => {
+	    		alert(resp)
+	    	})
+	    })
+	}
+	catch(err){
+	    console.log(err);
+	}
+  }	 	
   const loginHandler = () => {
     navigation.navigate('Home')
   }
 
     return (
         <SafeAreaView style={{ flex: 1,backgroundColor:"white"}}>
-         <Animatable.View 
-            animation="fadeInDown"
-             style={styles.upperSection}>
-          
-          </Animatable.View>
+	    <SideViews />
 
           <View 
             style={styles.lowerSection}>
@@ -37,21 +48,12 @@ const OTPScreen = ({navigation}) => {
                 Enter One Time Passcode received on your phone
                 </Text>
               </View>
-		<InputView img={PasswordImg} textType={"Enter OTP"}/>	
+	    <InputView setInput={setOtp} value={otp} img={Pass} textType={"OTP"} keyboardType={"number-pad"}/>	
               
             </View>
-              <TouchableOpacity
-                onPress={()=>navigation.navigate('SignUp')}
-                style={styles.loginBtn}>
-                <Text style={styles.loginBtnText}>Continue</Text>
-              </TouchableOpacity>
 
+	    <SubmitBtn callbackFunc={authenticateOTP} submitText={"Verify"} theme={"#EFB14E"} /> 
               </View>
-              <Animatable.View 
-              animation="fadeInUp" 
-              style={styles.upperSectionRight}>
-          
-             </Animatable.View>
         </SafeAreaView>
       );
 }

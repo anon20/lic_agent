@@ -1,20 +1,19 @@
 import Urls from 'APIs/Urls';
 
-export const loginUser = (uid, phNo) => {
-	console.log(`uid : `, uid, ` phNo : `, phNo);
+export const loginUser = jwt => {
+	/* console.log(`jwt : `, jwt, ` phNo : `, phNo); */
 	return fetch(Urls.login, {
 		method:'POST',
 		headers: {
 			'Accept':'application/json',
-			'Content-Type':'application/json'
+			'Content-Type':'application/json',
+			'Authorization':jwt
 		},
 		body:JSON.stringify({
-			uid:uid,
-			phNo:phNo
+			jwt:jwt,
 	        })
 	})
 	.then(resp => {
-		console.log(`resp : `, resp);
 		return resp;	
 	})
 	.catch(err => {
